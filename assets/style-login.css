@@ -124,43 +124,68 @@ body {
 /* Contenedor del formulario */
 .form-container {
     background-color: #fff;
-    border: 1px solid #ccc;
+    border: 1px solid #eaeaea; 
+    border-radius: 8px; /* Bordes redondeados del recuadro principal */
     width: 100%;
-    max-width: 400px; /* Ancho máximo del cuadro */
+    max-width: 450px; 
+    padding: 30px; /* Esto hace que la cabecera café quede contenida adentro */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra difuminada de la imagen */
 }
 
-/* Cabecera del formulario (gris) */
+/* Cabecera del formulario (Título limpio) */
 .form-header {
-    background-color: #e0e0e0;
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #ccc;
+    background-color: transparent; /* Quitamos el fondo café */
+    color: #1b1b1b; /* Texto oscuro corporativo */
+    padding: 0 0 15px 0; /* Espaciado solo hacia abajo */
+    text-align: center;
+    border-bottom: 2px solid #eaeaea; /* Línea divisoria sutil */
+    margin-bottom: 20px;
+}
+
+.form-header h3 {
+    margin: 0;
+    font-size: 24px; /* Más grande para que destaque como título */
+    font-weight: bold;
 }
 
 /* Agrupación de inputs */
 .input-group {
     display: flex;
     flex-direction: column;
-    padding: 15px 20px 0;
+    padding: 10px 0;
+}
+
+.input-group label {
+    font-size: 16px;
+    color: #1b1b1b;
+    margin-bottom: 8px; /* Separación calcada de la imagen */
 }
 
 .input-group input {
-    padding: 10px;
-    margin-top: 5px;
+    padding: 12px;
     border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: 0.3s ease;
+    font-family: Arial, sans-serif; /* Para que el texto interno se vea moderno */
+}
+
+.input-group input:focus {
+    border-color: #7B552A; /* Borde café al escribir */
 }
 
 /* Botón de envío */
 .submit-group {
-    padding: 20px;
+    padding: 25px 0 10px;
     text-align: center;
 }
 
 #btn-login {
-    padding: 10px 40px;
-    background-color: #d4a373; /* Mismo color de acento del navbar */
-    color: #1b1b1b;
-    font-weight: bold;
+    width: 100%;
+    padding: 12px;
+    background-color: #7B552A; /* Mismo color café de la cabecera */
+    color: #fff;
+    font-size: 16px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -168,20 +193,8 @@ body {
 }
 
 #btn-login:hover {
-    background-color: #1b1b1b;
-    color: white;
+    background-color: #5d3f1e; /* Un café más oscuro al pasar el mouse */
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* footer */
 
