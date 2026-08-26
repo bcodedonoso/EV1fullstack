@@ -12,12 +12,26 @@
 }
 
 .formulario input,
-.formulario select {
+.formulario select,
+.formulario textarea {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 6px;
+    font-family: inherit;
+}
+
+.formulario textarea {
+    resize: vertical;
+}
+
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+    outline: none;
+    border-color: rgb(124, 83, 35);
+    box-shadow: 0 0 0 2px rgba(124, 83, 35, 0.2);
 }
 
 .formulario button {
@@ -36,18 +50,17 @@
     background-color: rgb(100, 66, 28);
 }
 
-.card-formulario {
-    border-radius: 40px;
+.campo {
+    margin-bottom: 12px;
 }
 
 .formulario-titulo {
     margin: auto;
     text-align: center;
     padding: 10px 15px;
-    border-color:  rgb(124, 83, 35);
+    border-color: rgb(124, 83, 35);
     background-color: rgb(124, 83, 35);
     color: aliceblue;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(151, 151, 151, 0.15);
-
 }
