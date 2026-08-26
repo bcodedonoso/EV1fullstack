@@ -1,0 +1,40 @@
+.formulario {
+    background-color: white;
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 50px auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.formulario label {
+    margin-top: 10px;
+}
+
+.formulario input,
+.formulario select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    
+}
+
+.formulario button {
+    display: block;
+    margin: 15px auto 0;
+    padding: 10px 20px;
+    background-color: rgb(124, 83, 35);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.card-formulario {
+    border-radius: 40px;
+}
+
+.formulario-titulo {
+    margin: auto;
+
+}
+
