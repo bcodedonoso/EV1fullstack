@@ -9,52 +9,37 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <div id="logo-nav">Site Name</div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="productos.html">Productos</a>
-            <a href="nosotros.html">Nosotros</a>
-            <a href="blogs.html">Blogs</a>
-            <a href="contacto.html">Contacto</a>
-        </nav>
-        <div id="user-actions">
-            <span>Cart (0)</span>
-        </div>
-    </header>
+<main class="login-page">
+    <div class="company-branding">
+        <img src="img/logo.png" alt="Logo de la empresa">
+        <h2>Bienvenido a ZTHORKEN</h2>
+    </div>
 
-    <main class="login page">
-        <div class = "company-branding">
-            <img src="img" alt="Logo de la empresa"> <!-- Asegurate de poner la imagen-->
-            <h2>Bienvenido a ZTHORKEN</h2>
+    <!-- Formulario de inicio de sesion -->
+    <section class="form-container">
+        <div class="form-header">
+            <h3>Iniciar Sesión</h3>
         </div>
 
-        <!-- Formulario de inicio de sesión -->
-        <section class ="form-container">
-            <div class ="form-header">
-                <h3>Iniciar Sesión</h3>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" placeholder="Ingresa tu correo" required>
             </div>
 
-            <form id="loginForm">
-                <div class="form-group">
-                    <label for="correo">Correo Electrónico:</label>
-                    <input type="email" id="correo" name="correo" placeholder="Ingresa tu correo" required>
-                </div>
+            <div class="input-group">
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa tu contraseña" required>
+            </div>
 
-                <div class="input-group">
-                    <label for="contrasena">Contraseña:</label>
-                    <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa tu contraseña" required>
-                </div>
+            <div class="submit-group">
+                <button type="submit" id="btn-login">Iniciar Sesión</button>
+            </div>
+        </form>
+    </section>
+</main>
 
-                <div class="submit group">
-                    <button type="submit">Iniciar Sesión</button>
-                </div>
-
-            </form>
-        </section>
-
-    </main>
-
+<!-- footer -->
     <footer>
         <p>Mantente en contacto con nosotros | Suscribete</p>
     </footer>
