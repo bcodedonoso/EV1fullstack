@@ -9,67 +9,6 @@ html {
     scroll-behavior: smooth;
 }
 
-
-.formulario {
-    background-color: white;
-    width: 400px;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 50px auto;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-}
-
-.formulario label {
-    margin-top: 10px;
-}
-
-.formulario input,
-.formulario select {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-}
-
-.formulario button {
-    display: block;
-    margin: 15px auto 0;
-    padding: 10px 20px;
-    background-color: rgb(124, 83, 35);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.formulario button:hover {
-    background-color: rgb(100, 66, 28);
-}
-
-.card-formulario {
-    border-radius: 40px;
-}
-
-.formulario-titulo {
-    margin: auto;
-    text-align: center;
-    padding: 10px 15px;
-    border-color:  rgb(124, 83, 35);
-    background-color: rgb(124, 83, 35);
-    color: aliceblue;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(151, 151, 151, 0.15);
-
-}
-
-
-
-/* nav  y footer */
-
-
-
 html, body {
     min-height: 100%;
 }
@@ -157,6 +96,15 @@ body {
     transition: 0.3s ease;
     transform: scale(1.05);
 }
+
+
+
+
+
+
+
+
+
 
 
 
