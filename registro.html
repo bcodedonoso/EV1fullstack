@@ -43,6 +43,24 @@
                 <input type="tel" id="telefono" name="telefono" placeholder="+56 9 1234 5678" />
             </div>
 
+            <div class="campo">
+                <label for="region" class="formulario-label">Región</label>
+                <select id="region" name="region" required>
+                    <option value="">-- Seleccione la región --</option>
+                    <option value="rm">Región Metropolitana de Santiago</option>
+                    <option value="araucania">Región de la Araucanía</option>
+                    <option value="nuble">Región de Ñuble</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="comuna" class="formulario-label">Comuna</label>
+                <select id="comuna" name="comuna" required disabled>
+                    <option value="">-- Seleccione la comuna --</option>
+                </select>
+            </div>
+
+
             <button type="submit">Registrarse</button>
 
           </form>
