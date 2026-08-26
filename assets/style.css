@@ -1,25 +1,33 @@
-*{
+* {
     font-family: 'Times New Roman', Times, serif;
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
-
+ 
+html {
+    scroll-behavior: smooth;
+}
+ 
+/* Navbar */
+ 
 .navbar {
     position: sticky;
     top: 0;
-    z-index: 1000;    background-color: #1b1b1b;
+    z-index: 1000;
+    background-color: #1b1b1b;
     padding: 18px 50px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
-
+ 
 .navdiv {
-    
     display: flex;
     align-items: center;
     width: 100%;
+    flex-wrap: wrap;
+    gap: 15px;
 }
-
+ 
 .logo a {
     color: white;
     font-size: 28px;
@@ -27,33 +35,33 @@
     transition: 0.3s ease;
     text-decoration: none;
 }
-
-.logo a:hover {
+ 
+.logo a:hover,
+.logo a:focus-visible {
     color: #d4a373;
 }
-.logo:hover{
-        transform: scale(1.05);
-
-}
-
+ 
 .navdiv ul {
     display: flex;
     list-style: none;
     gap: 25px;
     margin: 0 auto;
     padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-
+ 
 .navdiv ul li a {
     color: white;
     text-decoration: none;
     font-size: 17px;
 }
-
-.navdiv ul li a:hover {
+ 
+.navdiv ul li a:hover,
+.navdiv ul li a:focus-visible {
     color: #d4a373;
 }
-
+ 
 .navdiv button {
     display: flex;
     align-items: center;
@@ -64,91 +72,167 @@
     padding: 9px 15px;
     cursor: pointer;
 }
-
+ 
 .navdiv button a {
     color: #1b1b1b;
     text-decoration: none;
     font-weight: bold;
 }
-
-.navdiv button:hover{
+ 
+.navdiv button:hover,
+.navdiv button:focus-visible {
     background-color: rgb(251, 254, 254);
     transition: 0.3s ease;
     transform: scale(1.05);
 }
-
-/*  Register */
-.register{
+ 
+/* Register */
+ 
+.register {
+    width: 100%;
     display: flex;
-    text-align: center;
+    justify-content: flex-end;
+    padding: 15px 50px;
+    flex-wrap: wrap;
 }
-.register li a{
+ 
+.register ul {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+ 
+.register ul li a {
+    color: #1b1b1b;
     text-decoration: none;
-    color: rgb(37, 37, 37);
-    font-size: 20px;
-
-
+    font-size: 18px;
 }
-.register li{
-        list-style: none;
-
+ 
+.register ul li a:hover,
+.register ul li a:focus-visible {
+    color: #d4a373;
 }
-
-
-
-
-
-
-
-
-
-/* Style Productos */
-
-.container-items{
+ 
+/* Hero */
+ 
+.hero {
+    width: 90%;
+    margin: 20px auto 60px;
+    padding: 20px 45px;
+    background-color: #e5e5e5;
+ 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 25px;
+ 
+    min-height: 330px;
+}
+ 
+.hero-content {
+    width: 45%;
+}
+ 
+.hero-content h1 {
+    font-size: 38px;
+    margin-bottom: 25px;
+}
+ 
+.hero-content p {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 60px;
+}
+ 
+.hero-button {
+    display: inline-block;
+    padding: 10px 55px;
+ 
+    background-color: white;
+    color: #222;
+ 
+    border: 2px solid #222;
+    text-decoration: none;
+ 
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+ 
+    transition: 0.3s;
+}
+ 
+.hero-button:hover,
+.hero-button:focus-visible {
+    background-color: #222;
+    color: white;
+}
+ 
+.hero-image {
+    width: 52%;
+    height: 295px;
+    overflow: hidden;
+}
+ 
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+ 
+/* Productos */
+ 
+.container-items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 50px;
 }
-
-.item{
+ 
+.item {
     border-radius: 10px;
 }
-
-.item:hover{
+ 
+.item:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
 }
-
-.item img{
+ 
+.item img {
     width: 100%;
     height: 300px;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
     transition: all .5s;
 }
-
-.item figure{
+ 
+.item figure {
     overflow: hidden;
+    margin: 0;
 }
-
-.item:hover img{
+ 
+.item:hover img {
     transform: scale(1.2);
 }
-
-.info-product{
+ 
+.info-product {
     padding: 15px 30px;
     line-height: 2;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-
-.price{
+ 
+.price {
     font-size: 18px;
     font-weight: 900;
 }
-
-.info-product button{
+ 
+.info-product button {
     border: none;
     background: none;
     background-color: #000;
@@ -156,3 +240,233 @@
     padding: 15px 10px;
     cursor: pointer;
 }
+ 
+.info-product button:hover,
+.info-product button:focus-visible {
+    background-color: #333;
+}
+ 
+/* Accesibilidad general para teclado */
+ 
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #d4a373;
+    outline-offset: 2px;
+}
+ 
+/* Footer */
+ 
+.footer {
+    background-color: #1b1b1b;
+    color: #fff;
+    padding: 40px 50px 0;
+    margin-top: 40px;
+}
+ 
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-bottom: 30px;
+}
+ 
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+ 
+.footer-site-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+ 
+.footer-categories {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+ 
+.footer-categories li a {
+    color: #fff;
+    text-decoration: underline;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+ 
+.footer-categories li a:hover,
+.footer-categories li a:focus-visible {
+    color: #d4a373;
+}
+
+  
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+ 
+.newsletter-text {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+ 
+.newsletter-form {
+    display: flex;
+}
+ 
+.newsletter-form input {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    padding: 10px 14px;
+    border: 1px solid #555;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    width: 220px;
+}
+ 
+.newsletter-form input:focus-visible {
+    outline: 2px solid #d4a373;
+    outline-offset: -2px;
+}
+ 
+.newsletter-form button {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #d4a373;
+    color: #1b1b1b;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+ 
+.newsletter-form button:hover,
+.newsletter-form button:focus-visible {
+    background-color: #fff;
+}
+ 
+.footer-bottom {
+    border-top: 1px solid #3a3a3a;
+    text-align: center;
+    padding: 15px 0;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #aaa;
+}
+ 
+
+
+/* Responsividad */
+ 
+@media (max-width: 992px) {
+    .container-items {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 30px;
+    }
+ 
+    .hero-content {
+        width: 100%;
+    }
+ 
+    .hero-image {
+        width: 100%;
+        height: 220px;
+    }
+}
+ 
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+ 
+    .navdiv {
+        justify-content: center;
+        text-align: center;
+    }
+ 
+    .navdiv ul {
+        gap: 15px;
+        margin: 0;
+    }
+ 
+    .register {
+        justify-content: center;
+        padding: 12px 20px;
+    }
+ 
+    .hero {
+        width: 95%;
+        padding: 20px;
+        text-align: center;
+        justify-content: center;
+    }
+ 
+    .hero-content p {
+        margin-bottom: 30px;
+    }
+ 
+    .footer {
+        padding: 30px 20px 0;
+    }
+ 
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+ 
+    .footer-left {
+        flex-direction: column;
+    }
+ 
+    .footer-right {
+        align-items: center;
+        width: 100%;
+    }
+}
+ 
+@media (max-width: 576px) {
+    .container-items {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+ 
+    .navdiv ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+ 
+    .hero-content h1 {
+        font-size: 28px;
+    }
+ 
+    .footer-categories {
+        flex-direction: column;
+        gap: 8px;
+    }
+ 
+    .newsletter-form {
+        flex-direction: column;
+        width: 100%;
+    }
+ 
+    .newsletter-form input {
+        width: 100%;
+        border-radius: 4px;
+    }
+ 
+    .newsletter-form button {
+        border-radius: 4px;
+        margin-top: 8px;
+    }
+}
+ 
