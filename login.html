@@ -97,5 +97,24 @@
 
 
 </footer>
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const correo = document.getElementById('correo').value.trim();
+        const contrasena = document.getElementById('contrasena').value;
+
+        // Credenciales de administrador (solo para efectos de este proyecto,
+        // en un sitio real esto se valida en un servidor, no en el navegador)
+        const ADMIN_CORREO = 'admin@zthorken.cl';
+        const ADMIN_CONTRASENA = 'admin123';
+
+        if (correo === ADMIN_CORREO && contrasena === ADMIN_CONTRASENA) {
+            window.location.href = '/admin/index.html';
+        } else {
+            alert('Correo o contraseña incorrectos.');
+        }
+    });
+</script>
 </body>
 </html>
