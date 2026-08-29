@@ -1,0 +1,83 @@
+
+/* navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #1b1b1b;
+    padding: 18px 50px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.navdiv {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo a {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.logo a:hover,
+.logo a:focus-visible {
+    color: #d4a373;
+}
+
+.navdiv ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    margin: 0 auto;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.navdiv ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navdiv ul li a:hover,
+.navdiv ul li a:focus-visible {
+    color: #d4a373;
+}
+
+.navdiv button {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background-color: #d4a373;
+    border: none;
+    border-radius: 6px;
+    padding: 9px 15px;
+    cursor: pointer;
+}
+
+.navdiv button a {
+    color: #1b1b1b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navdiv button:hover,
+.navdiv button:focus-visible {
+    background-color: rgb(251, 254, 254);
+    transition: 0.3s ease;
+    transform: scale(1.05);
+}
+
+*{
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
