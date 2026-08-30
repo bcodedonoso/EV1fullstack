@@ -38,7 +38,7 @@
 
 <section id="productos" class="container-items">
 
-    <div class="item">
+    <div class="item" data-id="1">
         <figure>
             <img
                 src="https://images.unsplash.com/photo-1613040809024-b4ef7ba99bc3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -53,7 +53,7 @@
         </div>
     </div>
 
-    <div class="item">
+    <div class="item" data-id="2">
         <figure>
             <img
                 src="https://images.unsplash.com/photo-1589256469067-ea99122bbdc4?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -68,7 +68,7 @@
         </div>
     </div>
 
-    <div class="item">
+    <div class="item" data-id="3">
         <figure>
             <img
                 src="https://images.unsplash.com/photo-1525858907241-d230b66fb9fa?q=80&w=1249&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -83,7 +83,7 @@
         </div>
     </div>
 
-    <div class="item">
+    <div class="item" data-id="4">
         <figure>
             <img
                 src="https://images.unsplash.com/photo-1598978465764-7db2b679c694?q=80&w=1333&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -98,7 +98,7 @@
         </div>
     </div>
 
-    <div class="item">
+    <div class="item" data-id="5">
         <figure>
             <img
                 src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -113,7 +113,7 @@
         </div>
     </div>
 
-        <div class="item">
+        <div class="item" data-id="6">
         <figure>
             <img
                 src="https://images.unsplash.com/photo-1632079003110-d694908500da?q=80&w=1229&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -129,7 +129,7 @@
     </div>
 
 
-            <div class="item">
+            <div class="item" data-id="7">
         <figure>
             <img
                 src="https://images.unsplash.com/photo-1625750435936-f97e1748410b?q=80&w=1276&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -144,7 +144,7 @@
         </div>
     </div>
 
-        <div class="item">
+        <div class="item" data-id="8">
         <figure>
             <img
                 src="https://images.unsplash.com/photo-1614588876378-b2ffa4520c22?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -161,7 +161,7 @@
 
 
 
-            <div class="item">
+            <div class="item" data-id="9">
         <figure>
             <img
                 src="https://images.unsplash.com/photo-1663873148245-df991e1717ea?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -207,5 +207,18 @@
     </div>
 </footer>
 
+
+//agruegue este script: matias
+<script src="assets/productos-data.js"></script>
+<script src="assets/carrito.js"></script>
+<script>
+  document.querySelectorAll(".container-items .item").forEach((item) => {
+    const id = Number(item.dataset.id);
+    item.querySelector("button").addEventListener("click", () => {
+      agregarAlCarrito(id);
+      alert("Producto añadido al carrito.");
+    });
+  });
+</script>
 </body>
 </html>

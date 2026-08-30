@@ -22,7 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("producto-precio").textContent = producto.precio;
   document.getElementById("producto-descripcion").textContent = producto.descripcion;
 
+  //lo agregue yo: matias xd
   document.getElementById("btn-agregar-carrito").addEventListener("click", () => {
+    agregarAlCarrito(producto.id);
     alert(`${producto.nombre} fue añadido al carrito.`);
   });
 });
