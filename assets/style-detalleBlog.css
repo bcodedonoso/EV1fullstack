@@ -18,6 +18,20 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
+.carrito-contador {
+    background-color: #e63946;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    min-width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+}
 
 /* Navbar */
 
@@ -81,6 +95,26 @@ body {
     border-radius: 6px;
     padding: 9px 15px;
     cursor: pointer;
+}
+
+.btn-carrito {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background-color: #d4a373;
+    border: none;
+    border-radius: 6px;
+    padding: 9px 15px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #1b1b1b;
+    font-weight: bold;
+}
+
+.btn-carrito:hover {
+    background-color: rgb(251, 254, 254);
+    transition: 0.3s ease;
+    transform: scale(1.05);
 }
 
 .navdiv button a {

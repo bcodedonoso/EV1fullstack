@@ -106,4 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     guardarCarrito(carrito);
     renderizarCarrito();
   });
+
+
+
 });

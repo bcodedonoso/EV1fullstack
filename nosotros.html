@@ -1,78 +1,128 @@
 <!DOCTYPE html>
-<html lang="es">    
-
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros - ZTHORKEN</title>
-    <link rel="stylesheet" href="assets/style-login.css">
-    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nosotros - ZTHORKEN</title>
+<link rel="stylesheet" href="assets/nosotros.css">
 </head>
 <body>
 
 <nav class="navbar">
-    <div class="navdiv">
+<div class="navdiv">
 
-        <div class="logo"><a href="#">Zthorken Online</a></div>
+<div class="logo"><a href="#">Zthorken Online</a></div>
 
-        <ul>
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/productos.html">Productos</a></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="/noticias.html">Blog</a></li>
-            <li><a href="/formulario-contacto.html">Contactos</a></li>
-        </ul>
+<ul>
+<li><a href="/index.html">Home</a></li>
+<li><a href="/productos.html">Productos</a></li>
+<li><a href="/nosotros.html">Nosotros</a></li>
+<li><a href="/noticias.html">Blog</a></li>
+<li><a href="/formulario-contacto.html">Contactos</a></li>
+</ul>
 
-        <button>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0-4"/>
-            </svg>
-            <a href="#">Carrito</a>
-        </button>
+<a href="/carrito.html" class="btn-carrito">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+        fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0-4"/>
+    </svg>
+    Carrito
+    <span id="carrito-contador" class="carrito-contador">0</span>
+</a>
 
-    </div>
+</div>
 </nav>
 
-
-
-
-
-
 <main class="nosotros-page">
+
+<section class="nosotros-hero">
 <h1>Zthorken Online | Tecnología que simplifica tu día a día</h1>
+<p>
+    Somos una tienda online dedicada a acercar la mejor tecnología y
+    accesorios a las personas, con una experiencia de compra simple,
+    rápida y confiable.
+</p>
+</section>
+
+<section class="nosotros-historia">
+<h2>Nuestra historia</h2>
+<p>
+    Zthorken Online nació de una idea simple: comprar tecnología no
+    debería ser complicado. Empezamos como un pequeño catálogo de
+    accesorios electrónicos y, con el tiempo, fuimos creciendo hasta
+    convertirnos en una tienda pensada para quienes buscan productos
+    de calidad sin dar vueltas ni complicarse.
+</p>
+<p>
+    Hoy seguimos con la misma idea del principio: ofrecer una
+    selección curada de productos tecnológicos, con información clara
+    y un proceso de compra sin fricciones, de principio a fin.
+</p>
+</section>
+
+<section class="nosotros-mision-vision">
+<div class="mv-card">
+<h3>Misión</h3>
+<p>
+    Facilitar el acceso a tecnología útil y de calidad, ofreciendo una
+    experiencia de compra online simple, transparente y cercana para
+    cada persona que confía en nosotros.
+</p>
+</div>
+
+<div class="mv-card">
+<h3>Visión</h3>
+<p>
+    Ser una tienda online de referencia en accesorios y tecnología,
+    reconocida por la confianza de nuestros clientes y por hacer
+    simple lo que antes era complicado.
+</p>
+</div>
+</section>
+
+<section class="nosotros-valores">
+<h2>Lo que nos define</h2>
+<ul>
+<li><strong>Simpleza:</strong> procesos claros, sin letra chica.</li>
+<li><strong>Calidad:</strong> productos seleccionados, no improvisados.</li>
+<li><strong>Cercanía:</strong> atención pensada en las personas, no en números.</li>
+</ul>
+</section>
 
 </main>
 
 <!-- footer -->
 
 <footer class="footer">
-    <div class="footer-content">
+<div class="footer-content">
 
-        <div class="footer-left">
-            <div class="footer-site-name">Zthorken Online</div>
-            <ul class="footer-categories">
-                <li><a href="#">Audio</a></li>
-                <li><a href="#">Tecnología</a></li>
-                <li><a href="#">Accesorios Tech</a></li>
-            </ul>
-        </div>
+<div class="footer-left">
+<div class="footer-site-name">Zthorken Online</div>
+<ul class="footer-categories">
+<li><a href="#">Audio</a></li>
+<li><a href="#">Tecnología</a></li>
+<li><a href="#">Accesorios Tech</a></li>
+</ul>
+</div>
 
-        <div class="footer-right">
-            <p class="newsletter-text">¡Mantente en contacto! Únete a nuestro newsletter.</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Ingresa tu correo" aria-label="Correo electrónico" required>
-                <button type="submit">Suscribirse</button>
-            </form>
-        </div>
-    </div>
+<div class="footer-right">
+<p class="newsletter-text">¡Mantente en contacto! Únete a nuestro newsletter.</p>
+<form class="newsletter-form">
+<input type="email" placeholder="Ingresa tu correo" aria-label="Correo electrónico" required>
+<button type="submit">Suscribirse</button>
+</form>
+</div>
+</div>
 
-    
-    <div class="footer-bottom">
-        <p>&copy; 2026 Zthorken Online. Todos los derechos reservados.</p>
-    </div>
+<div class="footer-bottom">
+<p>&copy; 2026 Zthorken Online. Todos los derechos reservados.</p>
+</div>
 
+<script src="assets/carrito.js"></script>
+<script src="assets/toast.js"></script>
+<script src="assets/agregar-carrito.js"></script>
+<script src="assets/contador-carrito.js"></script>
 
 </footer>
 </body>
