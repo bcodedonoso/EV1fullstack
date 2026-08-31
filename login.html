@@ -99,23 +99,40 @@
 
 </footer>
 <script>
-    document.getElementById('loginForm').addEventListener('submit', function (e) {
-        e.preventDefault();
+document.getElementById('loginForm').addEventListener('submit', function (e) {
+    e.preventDefault();
 
-        const correo = document.getElementById('correo').value.trim();
-        const contrasena = document.getElementById('contrasena').value;
+    const correo = document.getElementById('correo').value.trim();
+    const contrasena = document.getElementById('contrasena').value;
 
-        // Credenciales de administrador (solo para efectos de este proyecto,
-        // en un sitio real esto se valida en un servidor, no en el navegador)
-        const ADMIN_CORREO = 'admin@zthorken.cl';
-        const ADMIN_CONTRASENA = 'admin123';
+    // Credenciales (solo para efectos de este proyecto,
+    // en un sitio real esto se valida en un servidor, no en el navegador)
+    const ADMIN_CORREO = 'admin@zthorken.cl';
+    const ADMIN_CONTRASENA = 'admin123';
 
-        if (correo === ADMIN_CORREO && contrasena === ADMIN_CONTRASENA) {
-            window.location.href = '/admin/index.html';
-        } else {
-            alert('Correo o contraseña incorrectos.');
-        }
-    });
+    const USUARIOS = [
+        { correo: 'juan@gmail.com', contrasena: 'juan123', nombre: 'Juan' },
+        { correo: 'maria@zthorken.cl', contrasena: 'maria123', nombre: 'Maria' }
+    ];
+
+    if (correo === ADMIN_CORREO && contrasena === ADMIN_CONTRASENA) {
+        window.location.href = '/admin/index.html';
+        return;
+    }
+
+    const usuarioEncontrado = USUARIOS.find(
+        u => u.correo === correo && u.contrasena === contrasena
+    );
+
+    if (usuarioEncontrado) {
+        // Guardamos la sesión en el navegador
+        localStorage.setItem('sesionActiva', 'true');
+        localStorage.setItem('usuarioNombre', usuarioEncontrado.nombre);
+        window.location.href = '/index.html';
+    } else {
+        alert('Correo o contraseña incorrectos.');
+    }
+});
 </script>
 
 <script src="assets/carrito.js"></script>

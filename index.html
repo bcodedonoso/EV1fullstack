@@ -186,6 +186,29 @@
     </div>
 </footer>
 
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const sesionActiva = localStorage.getItem('sesionActiva');
+    const registerDiv = document.querySelector('.register ul');
+
+    if (sesionActiva === 'true') {
+        const nombre = localStorage.getItem('usuarioNombre') || '';
+        registerDiv.innerHTML = `
+            <li>Hola, ${nombre}</li>
+            <li><a href="#" id="cerrarSesion">Cerrar Sesión</a></li>
+        `;
+
+        document.getElementById('cerrarSesion').addEventListener('click', function (e) {
+            e.preventDefault();
+            localStorage.removeItem('sesionActiva');
+            localStorage.removeItem('usuarioNombre');
+            window.location.reload();
+        });
+    }
+});
+</script>
+
 <script src="assets/productos-data.js"></script>
 <script src="assets/carrito.js"></script>
 <script src="assets/agregar-carrito.js"></script>
