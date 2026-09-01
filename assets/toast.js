@@ -5,6 +5,10 @@ function mostrarToast(mensaje, duracion = 3000) {
         container.id = "toast-container";
         document.body.appendChild(container);
     }
+
+    // Elimina cualquier toast anterior para que solo haya uno visible
+    container.innerHTML = "";
+
     const toast = document.createElement("div");
     toast.className = "toast";
     toast.textContent = mensaje;
@@ -44,4 +48,3 @@ function ocultarToastPersistente() {
     el.classList.remove("show");
     setTimeout(() => el.remove(), 300);
 }
-
