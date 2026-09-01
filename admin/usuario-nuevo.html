@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin - Nuevo usuario</title>
+    <link rel="stylesheet" href="../assets/style-admin.css">
+</head>
+<body>
+    <div class="admin-body">
+
+        <aside class="admin-sidebar">
+            <div class="admin-logo">Zthorken Admin</div>
+            <ul class="admin-nav">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="usuarios.html" class="activo">Usuarios</a></li>
+            </ul>
+            <div class="admin-sidebar-footer">
+                <a href="../index.html">Volver a la tienda</a>
+                <a href="../login.html">Cerrar sesión</a>
+            </div>
+        </aside>
+
+        <div class="admin-main">
+            <header class="admin-topbar">
+                <h1>Nuevo usuario</h1>
+            </header>
+
+            <main class="admin-content">
+                <form class="admin-formulario">
+                    <div class="campo">
+                        <label for="run">Run</label>
+                        <input type="text" id="run" name="run" placeholder="Ej: 19011022K">
+                    </div>
+
+                    <div class="fila-doble">
+                        <div class="campo">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+                        </div>
+                        <div class="campo">
+                            <label for="apellidos">Apellidos</label>
+                            <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos">
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="correo">Correo</label>
+                        <input type="email" id="correo" name="correo" placeholder="nombre@duoc.cl">
+                    </div>
+
+                    <div class="fila-doble">
+                        <div class="campo">
+                            <label for="fecha-nacimiento">Fecha de nacimiento (opcional)</label>
+                            <input type="date" id="fecha-nacimiento" name="fecha-nacimiento">
+                        </div>
+                        <div class="campo">
+                            <label for="tipo-usuario">Tipo de usuario</label>
+                            <select id="tipo-usuario" name="tipo-usuario">
+                                <option value="">-- Seleccione un tipo --</option>
+                                <option value="administrador">Administrador</option>
+                                <option value="cliente">Cliente</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="fila-doble">
+                        <div class="campo">
+                            <label for="region">Región</label>
+                            <select id="region" name="region">
+                                <option value="">-- Seleccione la región --</option>
+                                <option value="rm">Región Metropolitana de Santiago</option>
+                                <option value="araucania">Región de la Araucanía</option>
+                                <option value="nuble">Región de Ñuble</option>
+                            </select>
+                        </div>
+                        <div class="campo">
+                            <label for="comuna">Comuna</label>
+                            <select id="comuna" name="comuna" disabled>
+                                <option value="">-- Seleccione la comuna --</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" id="direccion" name="direccion" placeholder="Calle, número, comuna">
+                    </div>
+
+                    <div class="acciones-form">
+                        <button type="submit" class="btn-gold">Guardar usuario</button>
+                        <a href="usuarios.html" class="btn-outline">Cancelar</a>
+                    </div>
+                </form>
+            </main>
+        </div>
+
+    </div>
+
+    <script src="../assets/toast.js"></script>
+    <script src="../assets/admin-usuarios.js"></script>
+</body>
+</html>

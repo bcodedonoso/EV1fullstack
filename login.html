@@ -107,34 +107,27 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
 
     // Credenciales (solo para efectos de este proyecto,
     // en un sitio real esto se valida en un servidor, no en el navegador)
-    const ADMIN_CORREO = 'admin@zthorken.cl';
-    const ADMIN_CONTRASENA = 'admin123';
-
-    const USUARIOS = [
-        { correo: 'juan@gmail.com', contrasena: 'juan123', nombre: 'Juan' },
-        { correo: 'maria@zthorken.cl', contrasena: 'maria123', nombre: 'Maria' }
-    ];
-
-    if (correo === ADMIN_CORREO && contrasena === ADMIN_CONTRASENA) {
-        window.location.href = '/admin/index.html';
-        return;
-    }
-
     const usuarioEncontrado = USUARIOS.find(
         u => u.correo === correo && u.contrasena === contrasena
     );
 
-    if (usuarioEncontrado) {
-        // Guardamos la sesión en el navegador
-        localStorage.setItem('sesionActiva', 'true');
-        localStorage.setItem('usuarioNombre', usuarioEncontrado.nombre);
-        window.location.href = '/index.html';
-    } else {
+    if (!usuarioEncontrado) {
         alert('Correo o contraseña incorrectos.');
+        return;
     }
+
+    // Guardamos la sesión en el navegador
+    localStorage.setItem('sesionActiva', 'true');
+    localStorage.setItem('usuarioNombre', usuarioEncontrado.nombre);
+    localStorage.setItem('usuarioTipo', usuarioEncontrado.tipo);
+
+    window.location.href = usuarioEncontrado.tipo === 'administrador'
+        ? '/admin/index.html'
+        : '/index.html';
 });
 </script>
 
+<script src="assets/usuarios-data.js"></script>
 <script src="assets/carrito.js"></script>
 <script src="assets/toast.js"></script>
 <script src="assets/agregar-carrito.js"></script>
