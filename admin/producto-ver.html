@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel Admin - Ver producto</title>
-    <link rel="stylesheet" href="../assets/style-admin.css">
+    <link rel="stylesheet" href="style-admin.css">
 </head>
 <body>
     <div class="admin-body">
@@ -28,35 +28,13 @@
             </header>
 
             <main class="admin-content">
-                <div class="admin-detalle">
-                    <dl>
-                        <dt>Código</dt>
-                        <dd>P002</dd>
-
-                        <dt>Nombre</dt>
-                        <dd>Teclado Mecánico RGB</dd>
-
-                        <dt>Descripción</dt>
-                        <dd>Teclado mecánico con retroiluminación RGB e interruptores azules.</dd>
-
-                        <dt>Precio</dt>
-                        <dd>$39.990</dd>
-
-                        <dt>Stock</dt>
-                        <dd>2 <span class="badge badge-stock-critico">Crítico</span></dd>
-
-                        <dt>Categoría</dt>
-                        <dd>Tecnología</dd>
-                    </dl>
-
-                    <div class="acciones-form">
-                        <a href="producto-editar.html" class="btn-gold">Editar</a>
-                        <a href="productos.html" class="btn-outline">Volver al listado</a>
-                    </div>
-                </div>
+                <div class="admin-detalle" id="detalle-producto"></div>
             </main>
         </div>
 
     </div>
+
+    <script src="../assets/productos-data.js"></script>
+    <script src="admin-productos.js"></script>
 </body>
 </html>
