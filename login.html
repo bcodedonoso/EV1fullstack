@@ -7,7 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión - ZTHORKEN</title>
     <link rel="stylesheet" href="assets/style-login.css">
-    
+    <style>
+        #toast-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+            align-items: center;
+        }
+
+        .toast {
+            background: #333;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
 
@@ -50,7 +74,8 @@
             <h3>Iniciar Sesión</h3>
         </div>
 
-        <form id="loginForm">
+        <!-- ahora valida con el js y no con html-->
+        <form id="loginForm" novalidate>
             <div class="input-group">
                 <label for="correo">Correo Electrónico:</label>
                 <input type="email" id="correo" name="correo" placeholder="Ingresa tu correo" required>
@@ -65,6 +90,8 @@
                 <button type="submit" id="btn-login">Iniciar Sesión</button>
             </div>
         </form>
+
+        <div id="toast-container"></div>
     </section>
 </main>
 
@@ -98,6 +125,11 @@
 
 
 </footer>
+
+<script src="assets/carrito.js"></script>
+<script src="assets/toast.js"></script>
+<script src="assets/agregar-carrito.js"></script>
+<script src="assets/contador-carrito.js"></script>
 <script>
 document.getElementById('loginForm').addEventListener('submit', function (e) {
     e.preventDefault();
@@ -105,14 +137,36 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
     const correo = document.getElementById('correo').value.trim();
     const contrasena = document.getElementById('contrasena').value;
 
-    // Credenciales (solo para efectos de este proyecto,
-    // en un sitio real esto se valida en un servidor, no en el navegador)
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // --- Validaciones ---
+    if (correo === '') {
+        mostrarToast('El correo electrónico es obligatorio.');
+        return;
+    }
+
+    if (!regexEmail.test(correo)) {
+        mostrarToast('Ingresa un correo electrónico válido.');
+        return;
+    }
+
+    if (contrasena === '') {
+        mostrarToast('La contraseña es obligatoria.');
+        return;
+    }
+
+    if (contrasena.length < 6) {
+        mostrarToast('La contraseña debe tener al menos 6 caracteres.');
+        return;
+    }
+
+    // --- Lógica de autenticación
     const ADMIN_CORREO = 'admin@zthorken.cl';
     const ADMIN_CONTRASENA = 'admin123';
 
     const USUARIOS = [
         { correo: 'juan@gmail.com', contrasena: 'juan123', nombre: 'Juan' },
-        { correo: 'maria@zthorken.cl', contrasena: 'maria123', nombre: 'Maria' }
+        { correo: 'maria@outlook.com', contrasena: 'maria123', nombre: 'Maria' }
     ];
 
     if (correo === ADMIN_CORREO && contrasena === ADMIN_CONTRASENA) {
@@ -125,19 +179,15 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
     );
 
     if (usuarioEncontrado) {
-        // Guardamos la sesión en el navegador
         localStorage.setItem('sesionActiva', 'true');
         localStorage.setItem('usuarioNombre', usuarioEncontrado.nombre);
         window.location.href = '/index.html';
     } else {
-        alert('Correo o contraseña incorrectos.');
+        mostrarToast('Correo o contraseña incorrectos.');
     }
 });
 </script>
 
-<script src="assets/carrito.js"></script>
-<script src="assets/toast.js"></script>
-<script src="assets/agregar-carrito.js"></script>
-<script src="assets/contador-carrito.js"></script>
+
 </body>
 </html>
