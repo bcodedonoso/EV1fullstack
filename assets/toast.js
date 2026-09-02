@@ -19,3 +19,32 @@ function mostrarToast(mensaje, duracion = 3000) {
         setTimeout(() => toast.remove(), 300);
     }, duracion);
 }
+
+// Toast que no se autodestruye: queda en pantalla hasta llamar a ocultarToastPersistente().
+let toastPersistente = null;
+
+function mostrarToastPersistente(mensaje) {
+    let container = document.getElementById("toast-container");
+    if (!container) {
+        container = document.createElement("div");
+        container.id = "toast-container";
+        document.body.appendChild(container);
+    }
+
+    if (!toastPersistente) {
+        toastPersistente = document.createElement("div");
+        toastPersistente.className = "toast";
+        container.appendChild(toastPersistente);
+        requestAnimationFrame(() => toastPersistente.classList.add("show"));
+    }
+
+    toastPersistente.textContent = mensaje;
+}
+
+function ocultarToastPersistente() {
+    if (!toastPersistente) return;
+    const el = toastPersistente;
+    toastPersistente = null;
+    el.classList.remove("show");
+    setTimeout(() => el.remove(), 300);
+}

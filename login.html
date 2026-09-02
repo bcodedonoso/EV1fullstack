@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">    
+<html lang="es">
 
 
 <head>
@@ -118,7 +118,7 @@
         </div>
     </div>
 
-    
+
     <div class="footer-bottom">
         <p>&copy; 2026 Zthorken Online. Todos los derechos reservados.</p>
     </div>
@@ -126,6 +126,7 @@
 
 </footer>
 
+<script src="assets/usuarios-data.js"></script>
 <script src="assets/carrito.js"></script>
 <script src="assets/toast.js"></script>
 <script src="assets/agregar-carrito.js"></script>
@@ -137,6 +138,8 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
     const correo = document.getElementById('correo').value.trim();
     const contrasena = document.getElementById('contrasena').value;
 
+    // Credenciales (solo para efectos de este proyecto,
+    // en un sitio real esto se valida en un servidor, no en el navegador)
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     // Validaciones 
@@ -160,6 +163,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
         return;
     }
 
+<<<<<<< HEAD
     // Logica de autenticación
     const ADMIN_CORREO = 'admin@zthorken.cl';
     const ADMIN_CONTRASENA = 'admin123';
@@ -174,20 +178,28 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
         return;
     }
 
+=======
+    // --- Autenticación contra el listado compartido de usuarios ---
+>>>>>>> 44309620283c9c963374e51f1b8bc62246b69c53
     const usuarioEncontrado = USUARIOS.find(
         u => u.correo === correo && u.contrasena === contrasena
     );
 
-    if (usuarioEncontrado) {
-        localStorage.setItem('sesionActiva', 'true');
-        localStorage.setItem('usuarioNombre', usuarioEncontrado.nombre);
-        window.location.href = '/index.html';
-    } else {
+    if (!usuarioEncontrado) {
         mostrarToast('Correo o contraseña incorrectos.');
+        return;
     }
+
+    // Guardamos la sesión en el navegador
+    localStorage.setItem('sesionActiva', 'true');
+    localStorage.setItem('usuarioNombre', usuarioEncontrado.nombre);
+    localStorage.setItem('usuarioTipo', usuarioEncontrado.tipo);
+
+    window.location.href = usuarioEncontrado.tipo === 'administrador'
+        ? '/admin/index.html'
+        : '/index.html';
 });
 </script>
-
 
 </body>
 </html>

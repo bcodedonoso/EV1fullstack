@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin - Usuarios</title>
+    <link rel="stylesheet" href="style-admin.css">
+</head>
+<body>
+    <div class="admin-body">
+
+        <aside class="admin-sidebar">
+            <div class="admin-logo">Zthorken Admin</div>
+            <ul class="admin-nav">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="usuarios.html" class="activo">Usuarios</a></li>
+            </ul>
+            <div class="admin-sidebar-footer">
+                <a href="../index.html">Volver a la tienda</a>
+                <a href="../login.html">Cerrar sesión</a>
+            </div>
+        </aside>
+
+        <div class="admin-main">
+            <header class="admin-topbar">
+                <h1>Usuarios</h1>
+                <a href="usuario-nuevo.html" class="btn-gold">+ Nuevo usuario</a>
+            </header>
+
+            <main class="admin-content">
+                <div class="admin-tabla-wrap">
+                    <table class="admin-tabla">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Correo</th>
+                                <th>Tipo</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-usuarios"></tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+
+    </div>
+
+    <script src="../assets/usuarios-data.js"></script>
+    <script src="admin-usuarios.js"></script>
+</body>
+</html>
