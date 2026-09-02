@@ -1,5 +1,6 @@
 function mostrarLinkAdmin() {
-    if (localStorage.getItem("usuarioTipo") !== "administrador") return;
+    const tipo = localStorage.getItem("usuarioTipo");
+    if (tipo !== "administrador" && tipo !== "vendedor") return;
 
     const nav = document.querySelector(".navdiv ul");
     if (!nav) return;
