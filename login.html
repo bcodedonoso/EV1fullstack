@@ -131,6 +131,7 @@
 <script src="assets/toast.js"></script>
 <script src="assets/agregar-carrito.js"></script>
 <script src="assets/contador-carrito.js"></script>
+<script src="admin/admin-link.js"></script>
 <script>
 document.getElementById('loginForm').addEventListener('submit', function (e) {
     e.preventDefault();
@@ -141,8 +142,9 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
     // Credenciales (solo para efectos de este proyecto,
     // en un sitio real esto se valida en un servidor, no en el navegador)
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const dominiosPermitidos = ['@duoc.cl', '@profesor.duoc.cl', '@gmail.com'];
 
-    // Validaciones 
+    // Validaciones
     if (correo === '') {
         mostrarToast('El correo electrónico es obligatorio.');
         return;
@@ -153,13 +155,18 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
         return;
     }
 
+    if (!dominiosPermitidos.some(dominio => correo.toLowerCase().endsWith(dominio))) {
+        mostrarToast('Solo se aceptan correos @duoc.cl, @profesor.duoc.cl o @gmail.com.');
+        return;
+    }
+
     if (contrasena === '') {
         mostrarToast('La contraseña es obligatoria.');
         return;
     }
 
-    if (contrasena.length < 4 || contrasena.length > 20) {
-        mostrarToast('La contraseña debe estar entre 4 y 20 caracteres.');
+    if (contrasena.length < 4 || contrasena.length > 10) {
+        mostrarToast('La contraseña debe estar entre 4 y 10 caracteres.');
         return;
     }
 
@@ -178,7 +185,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
     localStorage.setItem('usuarioNombre', usuarioEncontrado.nombre);
     localStorage.setItem('usuarioTipo', usuarioEncontrado.tipo);
 
-    window.location.href = usuarioEncontrado.tipo === 'administrador'
+    window.location.href = (usuarioEncontrado.tipo === 'administrador' || usuarioEncontrado.tipo === 'vendedor')
         ? '/admin/index.html'
         : '/index.html';
 });

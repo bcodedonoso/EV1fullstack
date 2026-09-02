@@ -40,6 +40,8 @@ function renderizarTablaProductos() {
     const tbody = document.getElementById("tabla-productos");
     if (!tbody) return;
 
+    const esVendedor = localStorage.getItem("usuarioTipo") === "vendedor";
+
     tbody.innerHTML = obtenerTodosLosProductos().map(p => {
         const critico = p.stockCritico !== undefined && p.stock <= p.stockCritico;
         return `
@@ -51,7 +53,7 @@ function renderizarTablaProductos() {
                 <td>${p.categoria}</td>
                 <td class="acciones">
                     <a href="producto-ver.html?codigo=${encodeURIComponent(p.codigo)}" class="btn-outline">Ver</a>
-                    <a href="producto-editar.html?codigo=${encodeURIComponent(p.codigo)}" class="btn-dark">Editar</a>
+                    ${esVendedor ? "" : `<a href="producto-editar.html?codigo=${encodeURIComponent(p.codigo)}" class="btn-dark">Editar</a>`}
                 </td>
             </tr>
         `;
@@ -181,7 +183,7 @@ function prepararVistaProducto() {
         </dl>
 
         <div class="acciones-form">
-            <a href="producto-editar.html?codigo=${encodeURIComponent(producto.codigo)}" class="btn-gold">Editar</a>
+            ${localStorage.getItem("usuarioTipo") === "vendedor" ? "" : `<a href="producto-editar.html?codigo=${encodeURIComponent(producto.codigo)}" class="btn-gold">Editar</a>`}
             <a href="productos.html" class="btn-outline">Volver al listado</a>
         </div>
     `;

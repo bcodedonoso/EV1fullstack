@@ -254,6 +254,11 @@ button:focus-visible {
     color: #fff;
 }
 
+.badge-vendedor {
+    background-color: #c9a227;
+    color: #fff;
+}
+
 .badge-cliente {
     background-color: #e5e5e5;
     color: #333;

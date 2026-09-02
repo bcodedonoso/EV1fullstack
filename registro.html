@@ -77,6 +77,11 @@
           <form id="formularioContacto" class="card-formulario" novalidate>
 
             <div class="campo">
+                <label for="run" class="formulario-label">Run</label>
+                <input type="text" id="run" name="run" placeholder="Ej: 19011022K" required />
+            </div>
+
+            <div class="campo">
                 <label for="nombre" class="formulario-label">Nombres</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Tus nombres" required maxlength="50"/>
             </div>
@@ -132,6 +137,11 @@
                 </select>
             </div>
 
+            <div class="campo">
+                <label for="direccion" class="formulario-label">Dirección</label>
+                <input type="text" id="direccion" name="direccion" placeholder="Calle, número, comuna" required />
+            </div>
+
             <button type="submit">Registrarse</button>
 
           </form>
@@ -175,6 +185,8 @@
 <script src="assets/toast.js"></script>
 <script src="assets/agregar-carrito.js"></script>
 <script src="assets/contador-carrito.js"></script>
+<script src="admin/admin-link.js"></script>
+<script src="assets/validar-run.js"></script>
 <script src="assets/script-registro.js"></script>
 </body>
 </html>

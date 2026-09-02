@@ -3,7 +3,14 @@ const USUARIOS_EDITADOS_KEY = "usuariosEditados";
 
 const BADGE_POR_TIPO = {
     administrador: "badge-admin",
+    vendedor: "badge-vendedor",
     cliente: "badge-cliente"
+};
+
+const REGIONES = {
+    rm: "Región Metropolitana de Santiago",
+    araucania: "Región de la Araucanía",
+    nuble: "Región de Ñuble"
 };
 
 const CAMPOS_REQUERIDOS_USUARIO = [
@@ -81,6 +88,13 @@ function validarCamposUsuario() {
         return false;
     }
 
+    const campoRun = document.getElementById("run");
+    if (!esRunValido(campoRun.value)) {
+        campoRun.classList.add("campo-invalido");
+        mostrarToastPersistente("El run no es válido (formato o dígito verificador incorrecto).");
+        return false;
+    }
+
     ocultarToastPersistente();
     return true;
 }
@@ -142,8 +156,49 @@ function prepararEdicionUsuario() {
     });
 }
 
+function prepararVistaUsuario() {
+    const contenedor = document.getElementById("detalle-usuario");
+    if (!contenedor) return;
+
+    const correo = new URLSearchParams(window.location.search).get("correo");
+    const usuario = obtenerTodosLosUsuarios().find(u => u.correo === correo);
+
+    if (!usuario) {
+        contenedor.innerHTML = "<p>No se encontró el usuario.</p>";
+        return;
+    }
+
+    contenedor.innerHTML = `
+        <dl>
+            <dt>Run</dt>
+            <dd>${usuario.run || "—"}</dd>
+
+            <dt>Nombre</dt>
+            <dd>${usuario.nombre} ${usuario.apellidos || ""}</dd>
+
+            <dt>Correo</dt>
+            <dd>${usuario.correo}</dd>
+
+            <dt>Tipo de usuario</dt>
+            <dd><span class="badge ${BADGE_POR_TIPO[usuario.tipo] || ""}">${usuario.tipo}</span></dd>
+
+            <dt>Región / Comuna</dt>
+            <dd>${REGIONES[usuario.region] || "—"}${usuario.comuna ? ", " + usuario.comuna : ""}</dd>
+
+            <dt>Dirección</dt>
+            <dd>${usuario.direccion || "—"}</dd>
+        </dl>
+
+        <div class="acciones-form">
+            <a href="usuario-editar.html?correo=${encodeURIComponent(usuario.correo)}" class="btn-gold">Editar</a>
+            <a href="usuarios.html" class="btn-outline">Volver al listado</a>
+        </div>
+    `;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     renderizarTablaUsuarios();
     prepararFormularioUsuario();
     prepararEdicionUsuario();
+    prepararVistaUsuario();
 });

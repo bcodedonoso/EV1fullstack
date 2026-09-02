@@ -45,6 +45,7 @@ form.addEventListener('submit', function (e) {
     e.preventDefault();
     let esValido = true;
 
+    const run = document.getElementById('run').value.trim();
     const nombre = document.getElementById('nombre').value.trim();
     const apellidos = document.getElementById('apellidos').value.trim();
     const email = document.getElementById('email').value.trim();
@@ -55,11 +56,23 @@ form.addEventListener('submit', function (e) {
     const telefono = document.getElementById('telefono').value.trim();
     const region = document.getElementById('region').value;
     const comuna = document.getElementById('comuna').value;
+    const direccion = document.getElementById('direccion').value.trim();
 
     const regexEmailBase = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const regexTelefono = /^\+?[0-9\s]{8,15}$/;
     const regexContrasena = /^(?=.*[A-Za-z])(?=.*\d).{6,}$/;
     const dominiosPermitidos = ['@duoc.cl', '@profesor.duoc.cl', '@gmail.com'];
+
+    // Run (requerido, 7 a 9 caracteres sin puntos ni guion, con dígito verificador válido)
+    if (run === '') {
+        mostrarError('run', 'El run es obligatorio.');
+        esValido = false;
+    } else if (!esRunValido(run)) {
+        mostrarError('run', 'Ingresa un run válido, sin puntos ni guion (ej: 19011022K).');
+        esValido = false;
+    } else {
+        limpiarError('run');
+    }
 
     // Nombre (requerido, máximo 50 caracteres)
     if (nombre === '' || nombre.length > 50) {
@@ -148,6 +161,14 @@ form.addEventListener('submit', function (e) {
         esValido = false;
     } else {
         limpiarError('comuna');
+    }
+
+    // Dirección (requerida)
+    if (direccion === '') {
+        mostrarError('direccion', 'La dirección es obligatoria.');
+        esValido = false;
+    } else {
+        limpiarError('direccion');
     }
 
     if (esValido) {
