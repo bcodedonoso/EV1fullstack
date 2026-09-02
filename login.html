@@ -158,29 +158,12 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
         return;
     }
 
-    if (contrasena.length > 3 && contrasena.length < 21) {
+    if (contrasena.length < 4 || contrasena.length > 20) {
         mostrarToast('La contraseña debe estar entre 4 y 20 caracteres.');
         return;
     }
 
-<<<<<<< HEAD
-    // Logica de autenticación
-    const ADMIN_CORREO = 'admin@zthorken.cl';
-    const ADMIN_CONTRASENA = 'admin123';
-
-    const USUARIOS = [
-        { correo: 'juan@profesor.duoc.cl', contrasena: 'juan123', nombre: 'Juan' },
-        { correo: 'maria@duocuc.cl', contrasena: 'maria123', nombre: 'Maria' }
-    ];
-
-    if (correo === ADMIN_CORREO && contrasena === ADMIN_CONTRASENA) {
-        window.location.href = '/admin/index.html';
-        return;
-    }
-
-=======
     // --- Autenticación contra el listado compartido de usuarios ---
->>>>>>> 44309620283c9c963374e51f1b8bc62246b69c53
     const usuarioEncontrado = USUARIOS.find(
         u => u.correo === correo && u.contrasena === contrasena
     );
