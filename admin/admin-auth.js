@@ -3,6 +3,15 @@
 (function () {
     const PAGINAS_VENDEDOR = ["index.html", "productos.html", "producto-ver.html"];
 
+    const linkCerrarSesion = document.querySelector('.admin-sidebar-footer a[href="../login.html"]');
+    if (linkCerrarSesion) {
+        linkCerrarSesion.addEventListener("click", () => {
+            localStorage.removeItem("sesionActiva");
+            localStorage.removeItem("usuarioNombre");
+            localStorage.removeItem("usuarioTipo");
+        });
+    }
+
     const tipo = localStorage.getItem("usuarioTipo");
     if (tipo !== "administrador" && tipo !== "vendedor") {
         window.location.href = "../login.html";
