@@ -35,34 +35,36 @@
 </nav>
 
 
-    <main>
+<main>
 <h1>Contactanos</h1>
 
-        <div class="formulario">
-            <p class="formulario-titulo">Formulario de contacto</p>
-          <form id="formularioContacto" class="card-formulario">
+<div class="formulario">
+    <p class="formulario-titulo">Formulario de contacto</p>
 
-            <div class="campo">
-                <label for="nombre" class="formulario-label">Nombre completo</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required />
-            </div>
+    <form id="formularioContacto" class="card-formulario" novalidate>
 
-            <div class="campo">
-                <label for="correo" class="formulario-label">Correo</label>
-                <input type="email" id="correo" name="correo" placeholder="nombre@correo.com" required />
-            </div>
-
-            <div class="campo">
-                <label for="contenido" class="formulario-label">Contenido</label>
-                <textarea id="contenido" name="contenido" rows="5" placeholder="Escribe tu mensaje" required></textarea>
-            </div>
-
-            <button type="submit">Enviar mensaje</button>
-
-          </form>
+        <div class="campo">
+            <label for="nombre" class="formulario-label">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required />
         </div>
-    </main>
 
+        <div class="campo">
+            <label for="correo" class="formulario-label">Correo</label>
+            <input type="email" id="correo" name="correo" placeholder="nombre@correo.com" required />
+        </div>
+
+        <div class="campo">
+            <label for="contenido" class="formulario-label">Contenido</label>
+            <textarea id="contenido" name="contenido" rows="5" placeholder="Escribe tu mensaje" required></textarea>
+        </div>
+
+        <button type="submit">Enviar mensaje</button>
+
+    </form>
+
+    <div id="toast-container"></div>
+</div>
+</main>
 
 
     
@@ -97,5 +99,6 @@
 <script src="assets/toast.js"></script>
 <script src="assets/agregar-carrito.js"></script>
 <script src="assets/contador-carrito.js"></script>
+<script src="script-contacto.js"></script>
 </body>
 </html>

@@ -139,7 +139,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
 
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // --- Validaciones ---
+    // Validaciones 
     if (correo === '') {
         mostrarToast('El correo electrónico es obligatorio.');
         return;
@@ -155,18 +155,18 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
         return;
     }
 
-    if (contrasena.length < 6) {
-        mostrarToast('La contraseña debe tener al menos 6 caracteres.');
+    if (contrasena.length > 3 && contrasena.length < 21) {
+        mostrarToast('La contraseña debe estar entre 4 y 20 caracteres.');
         return;
     }
 
-    // --- Lógica de autenticación
+    // Logica de autenticación
     const ADMIN_CORREO = 'admin@zthorken.cl';
     const ADMIN_CONTRASENA = 'admin123';
 
     const USUARIOS = [
-        { correo: 'juan@gmail.com', contrasena: 'juan123', nombre: 'Juan' },
-        { correo: 'maria@outlook.com', contrasena: 'maria123', nombre: 'Maria' }
+        { correo: 'juan@profesor.duoc.cl', contrasena: 'juan123', nombre: 'Juan' },
+        { correo: 'maria@duocuc.cl', contrasena: 'maria123', nombre: 'Maria' }
     ];
 
     if (correo === ADMIN_CORREO && contrasena === ADMIN_CONTRASENA) {

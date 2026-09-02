@@ -337,3 +337,38 @@ body {
     font-size: 13px;
     color: #aaa;
 }
+
+.formulario {
+    position: relative;
+}
+
+#toast-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+.toast {
+    background: #e74c3c;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    max-width: 90%;
+    box-sizing: border-box;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}

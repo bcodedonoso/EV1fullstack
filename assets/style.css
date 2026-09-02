@@ -224,6 +224,7 @@ html {
 
 .item {
     border-radius: 10px;
+    
 }
 
 .item:hover {
@@ -253,6 +254,7 @@ html {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    
 }
 
 .price {

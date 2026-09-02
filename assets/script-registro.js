@@ -46,28 +46,54 @@ form.addEventListener('submit', function (e) {
     let esValido = true;
 
     const nombre = document.getElementById('nombre').value.trim();
+    const apellidos = document.getElementById('apellidos').value.trim();
     const email = document.getElementById('email').value.trim();
     const emailConfirmar = document.getElementById('email-confirmar').value.trim();
     const contrasena = document.getElementById('contraseña').value;
     const contrasenaConfirmar = document.getElementById('contraseña-confirmar').value;
+    const fechaNacimiento = document.getElementById('fecha-nacimiento').value;
     const telefono = document.getElementById('telefono').value.trim();
     const region = document.getElementById('region').value;
     const comuna = document.getElementById('comuna').value;
 
-    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const regexEmailBase = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const regexTelefono = /^\+?[0-9\s]{8,15}$/;
+    const regexContrasena = /^(?=.*[A-Za-z])(?=.*\d).{6,}$/;
+    const dominiosPermitidos = ['@duoc.cl', '@profesor.duoc.cl', '@gmail.com'];
 
-    // Nombre
-    if (nombre.length < 3) {
-        mostrarError('nombre', 'Ingresa tu nombre completo (mínimo 3 caracteres).');
+    // Nombre (requerido, máximo 50 caracteres)
+    if (nombre === '' || nombre.length > 50) {
+        mostrarError('nombre', nombre === ''
+            ? 'El nombre es obligatorio.'
+            : 'El nombre no puede superar los 50 caracteres.');
         esValido = false;
     } else {
         limpiarError('nombre');
     }
 
-    // Email
-    if (!regexEmail.test(email)) {
+    // Apellidos (requerido, máximo 100 caracteres)
+    if (apellidos === '' || apellidos.length > 100) {
+        mostrarError('apellidos', apellidos === ''
+            ? 'Los apellidos son obligatorios.'
+            : 'Los apellidos no pueden superar los 100 caracteres.');
+        esValido = false;
+    } else {
+        limpiarError('apellidos');
+    }
+
+    // Email (requerido, máximo 100 caracteres, dominios permitidos)
+    const dominioValido = dominiosPermitidos.some(dominio => email.toLowerCase().endsWith(dominio));
+    if (email === '') {
+        mostrarError('email', 'El correo es obligatorio.');
+        esValido = false;
+    } else if (email.length > 100) {
+        mostrarError('email', 'El correo no puede superar los 100 caracteres.');
+        esValido = false;
+    } else if (!regexEmailBase.test(email)) {
         mostrarError('email', 'Ingresa un correo electrónico válido.');
+        esValido = false;
+    } else if (!dominioValido) {
+        mostrarError('email', 'Solo se aceptan correos @duoc.cl, @profesor.duoc.cl o @gmail.com.');
         esValido = false;
     } else {
         limpiarError('email');
@@ -82,7 +108,6 @@ form.addEventListener('submit', function (e) {
     }
 
     // Contraseña (mínimo 6 caracteres, al menos una letra y un número)
-    const regexContrasena = /^(?=.*[A-Za-z])(?=.*\d).{6,}$/;
     if (!regexContrasena.test(contrasena)) {
         mostrarError('contraseña', 'Mínimo 6 caracteres, con al menos una letra y un número.');
         esValido = false;
@@ -97,6 +122,9 @@ form.addEventListener('submit', function (e) {
     } else {
         limpiarError('contraseña-confirmar');
     }
+
+    // Fecha de nacimiento (opcional, sin validación extra)
+    limpiarError('fecha-nacimiento');
 
     // Teléfono (opcional, pero si se llena debe ser válido)
     if (telefono !== '' && !regexTelefono.test(telefono)) {

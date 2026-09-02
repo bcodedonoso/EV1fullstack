@@ -77,13 +77,18 @@
           <form id="formularioContacto" class="card-formulario" novalidate>
 
             <div class="campo">
-                <label for="nombre" class="formulario-label">Nombre Completo</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required />
+                <label for="nombre" class="formulario-label">Nombres</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tus nombres" required maxlength="50"/>
+            </div>
+
+            <div class="campo">
+                <label for="apellidos" class="formulario-label">Apellidos</label>
+                <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos" required maxlength="100" />
             </div>
 
             <div class="campo">
                 <label for="email" class="formulario-label">Correo electrónico</label>
-                <input type="email" id="email" name="email" placeholder="nombre@correo.com" required />
+                <input type="email" id="email" name="email" placeholder="nombre@correo.com" required maxlength="100" />
             </div>
 
             <div class="campo">
@@ -98,6 +103,11 @@
             <div class="campo">
                 <label for="contraseña-confirmar" class="formulario-label">contraseña (confirmar) </label>
                 <input type="password" id="contraseña-confirmar" name="contraseña-confirmar" placeholder="********" />
+            </div>
+
+            <div class="campo">
+                <label for="fecha-nacimiento" class="formulario-label">Fecha de nacimiento (opcional)</label>
+                <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" />
             </div>
 
             <div class="campo">
@@ -165,6 +175,6 @@
 <script src="assets/toast.js"></script>
 <script src="assets/agregar-carrito.js"></script>
 <script src="assets/contador-carrito.js"></script>
-<script src="script-registro.js"></script>
+<script src="assets/script-registro.js"></script>
 </body>
 </html>
