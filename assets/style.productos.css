@@ -129,6 +129,7 @@ h1{
 
 .item {
     border-radius: 10px;
+    
 }
 
 .item:hover {
@@ -158,6 +159,7 @@ h1{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    
 }
 
 .price {
